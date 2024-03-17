@@ -19,10 +19,11 @@ func _On_screen_exited():
 
 
 func _on_pipe_body_entered(body):
-	if body.is_in_group("player") == true:
-		print("body entered",body)
+	if body.is_in_group(GameManager.GROUP_PLAYER) == true:
+		if body.has_method("die") == true :
+			body.die()
 
 
 func _on_laser_body_exited(body):
-	if body.is_in_group("player") == true:
-		print("laser exited")
+	if body.is_in_group(GameManager.GROUP_PLAYER) == true:
+		ScoreManager.increment_score()

@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
-const GRAVITY : float = 880.0
-const POWER : float = -400.0
+#signal  on_plane_died
+
+const GRAVITY : float = 1500
+const POWER : float = -500.0
 @onready var sprite : AnimatedSprite2D = $Sprite
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 
@@ -33,3 +35,5 @@ func fly() -> void:
 func die() -> void:
 	sprite.stop()
 	set_physics_process(false)
+	#on_plane_died.emit()
+	SignalManager.on_plane_died.emit()
