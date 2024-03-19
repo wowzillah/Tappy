@@ -12,10 +12,8 @@ func get_high_score() ->int:
 	
 func set_score(v:int) -> void:
 	_score = v
-	print("set_score:", _score)
 	if (_score > _high_score):
 		_high_score = _score
-		print("bravo, you have the high score")
 	SignalManager.on_score_updated.emit()
 		
 		

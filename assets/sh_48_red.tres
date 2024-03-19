@@ -1,9 +1,9 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bagfux215e6vo"]
 
-[ext_resource type="FontFile" uid="uid://bkln0aanrxlqq" path="res://assets/fonts/Skranji-Bold.ttf" id="1_lmnbl"]
+[ext_resource type="FontFile" uid="uid://r68pa04ajdkj" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="1_ymaqf"]
 
 [resource]
-font = ExtResource("1_lmnbl")
+font = ExtResource("1_ymaqf")
 font_size = 48
 font_color = Color(0.898039, 0.258824, 0, 1)
 outline_size = 2

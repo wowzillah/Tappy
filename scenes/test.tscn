@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://nqo1ltf7i0b2"]
+
+[ext_resource type="Script" path="res://scenes/test.gd" id="1_av7xs"]
+[ext_resource type="Texture2D" uid="uid://crfkug54eckpq" path="res://assets/pipes/pipe.png" id="2_nfwfd"]
+[ext_resource type="Texture2D" uid="uid://8rk6p0gsay8m" path="res://assets/background/sky.png" id="3_ecfge"]
+[ext_resource type="Texture2D" uid="uid://cpqnf01p8nijc" path="res://assets/background/clouds_1.png" id="4_bsg4a"]
+[ext_resource type="Texture2D" uid="uid://t6foia8kghsn" path="res://assets/background/clouds_2.png" id="5_voveq"]
+[ext_resource type="Texture2D" uid="uid://br7jeoe0cwpbj" path="res://assets/background/rocks_1.png" id="6_qlv4c"]
+[ext_resource type="Texture2D" uid="uid://cyh0katsvymcu" path="res://assets/background/rocks_2.png" id="7_t2ks5"]
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_av7xs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Pipe" type="Sprite2D" parent="."]
+position = Vector2(42, 538)
+texture = ExtResource("2_nfwfd")
+
+[node name="Pipe2" type="Sprite2D" parent="."]
+position = Vector2(407, 593)
+rotation = 0.308446
+texture = ExtResource("2_nfwfd")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(897, 388)
+texture = ExtResource("3_ecfge")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(897, 388)
+texture = ExtResource("4_bsg4a")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(897, 388)
+texture = ExtResource("5_voveq")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(897, 388)
+texture = ExtResource("6_qlv4c")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(897, 388)
+texture = ExtResource("7_t2ks5")
