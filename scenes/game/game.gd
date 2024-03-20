@@ -17,8 +17,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 
 func spawn_pipes() -> void:
 	var new_pipes = pipes_scene.instantiate()
