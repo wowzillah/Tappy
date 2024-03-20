@@ -1,3 +1,41 @@
-[gd_scene format=3 uid="uid://b5roe58hkt4s6"]
+[gd_scene load_steps=10 format=3 uid="uid://b5roe58hkt4s6"]
+
+[ext_resource type="Script" path="res://scenes/ScrollingBg/scrolling_bg.gd" id="1_5qk0d"]
+[ext_resource type="PackedScene" uid="uid://c6wqqx44pnfw2" path="res://scenes/ScrollingLayer/scrolling_layer.tscn" id="2_porsj"]
+[ext_resource type="Texture2D" uid="uid://8rk6p0gsay8m" path="res://assets/background/sky.png" id="3_xw4bu"]
+[ext_resource type="Texture2D" uid="uid://cpqnf01p8nijc" path="res://assets/background/clouds_1.png" id="4_fynst"]
+[ext_resource type="Texture2D" uid="uid://t6foia8kghsn" path="res://assets/background/clouds_2.png" id="5_tn16l"]
+[ext_resource type="Texture2D" uid="uid://cm7042noylxb3" path="res://assets/background/clouds_3.png" id="6_ysy2u"]
+[ext_resource type="Texture2D" uid="uid://bhsyi4f620e1s" path="res://assets/background/clouds_4.png" id="7_n3mbi"]
+[ext_resource type="Texture2D" uid="uid://br7jeoe0cwpbj" path="res://assets/background/rocks_1.png" id="8_20hxh"]
+[ext_resource type="Texture2D" uid="uid://cyh0katsvymcu" path="res://assets/background/rocks_2.png" id="9_uu58w"]
 
 [node name="ScrollingBg" type="ParallaxBackground"]
+script = ExtResource("1_5qk0d")
+
+[node name="ScrollingLayer" parent="." instance=ExtResource("2_porsj")]
+texture = ExtResource("3_xw4bu")
+
+[node name="ScrollingLayer2" parent="." instance=ExtResource("2_porsj")]
+texture = ExtResource("4_fynst")
+scroll_scale = 0.1
+
+[node name="ScrollingLayer3" parent="." instance=ExtResource("2_porsj")]
+texture = ExtResource("5_tn16l")
+scroll_scale = 0.2
+
+[node name="ScrollingLayer4" parent="." instance=ExtResource("2_porsj")]
+texture = ExtResource("6_ysy2u")
+scroll_scale = 0.4
+
+[node name="ScrollingLayer5" parent="." instance=ExtResource("2_porsj")]
+texture = ExtResource("7_n3mbi")
+scroll_scale = 0.6
+
+[node name="ScrollingLayer6" parent="." instance=ExtResource("2_porsj")]
+texture = ExtResource("8_20hxh")
+scroll_scale = 0.8
+
+[node name="ScrollingLayer7" parent="." instance=ExtResource("2_porsj")]
+texture = ExtResource("9_uu58w")
+scroll_scale = 1.0

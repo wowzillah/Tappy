@@ -1,29 +1,30 @@
 [gd_scene load_steps=8 format=3 uid="uid://bh8u52rh337cy"]
 
-[ext_resource type="Texture2D" uid="uid://cyh0katsvymcu" path="res://assets/background/rocks_2.png" id="1_6igww"]
 [ext_resource type="Script" path="res://scenes/game/game.gd" id="1_hlyr8"]
 [ext_resource type="PackedScene" uid="uid://nqclcf1fj1sp" path="res://scenes/plane/plane.tscn" id="2_3n1ru"]
 [ext_resource type="PackedScene" uid="uid://cxhfp282bee5o" path="res://scenes/pipes/pipes.tscn" id="2_yxoyr"]
-[ext_resource type="PackedScene" path="res://Scenes/barriers/barrier.tscn" id="3_pm8ft"]
-[ext_resource type="PackedScene" path="res://Scenes/hud/hud.tscn" id="6_2ljx2"]
+[ext_resource type="PackedScene" uid="uid://dpdibdwyvw8h1" path="res://Scenes/barriers/barrier.tscn" id="3_pm8ft"]
+[ext_resource type="PackedScene" uid="uid://cxhjnjltrbh2u" path="res://Scenes/hud/hud.tscn" id="6_2ljx2"]
 [ext_resource type="PackedScene" uid="uid://c5uk0yq2wed6q" path="res://scenes/gameover/game_over.tscn" id="7_rk0rx"]
+[ext_resource type="PackedScene" uid="uid://b5roe58hkt4s6" path="res://scenes/ScrollingBg/scrolling_bg.tscn" id="8_cmwcu"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_hlyr8")
 pipes_scene = ExtResource("2_yxoyr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(335, 314)
-texture = ExtResource("1_6igww")
-
 [node name="Plane" parent="." instance=ExtResource("2_3n1ru")]
 position = Vector2(100, 359)
+collision_mask = 2
 
 [node name="Barrier" parent="." instance=ExtResource("3_pm8ft")]
 position = Vector2(0, -24)
+collision_layer = 2
+collision_mask = 0
 
 [node name="Barrier2" parent="." instance=ExtResource("3_pm8ft")]
 position = Vector2(18, 867)
+collision_layer = 2
+collision_mask = 0
 
 [node name="PipesHolder" type="Node" parent="."]
 
@@ -42,5 +43,7 @@ position = Vector2(530, 540)
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("6_2ljx2")]
 
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource("7_rk0rx")]
+
+[node name="ScrollingBg" parent="." instance=ExtResource("8_cmwcu")]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

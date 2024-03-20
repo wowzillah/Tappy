@@ -1,6 +1,6 @@
 extends Node2D
 
-const SCROLL_SPEED : float = 120.0
+
 @onready var score_sound = $ScoreSound
 
 # Called when the node enters the scene tree for the first time.
@@ -10,7 +10,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.x -= SCROLL_SPEED  * delta
+	position.x -= GameManager.SCROLL_SPEED  * delta
 
 
 	
@@ -20,6 +20,7 @@ func _On_screen_exited():
 
 
 func _on_pipe_body_entered(body):
+	print("pipe")
 	if body.is_in_group(GameManager.GROUP_PLAYER) == true:
 		if body.has_method("die") == true :
 			body.die()
